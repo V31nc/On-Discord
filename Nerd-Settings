@@ -127,8 +127,12 @@ UIStroke_2.Transparency = 0.700
 UIStroke_2.Parent = NoAnimation
 
 ResetData.MouseButton1Down:connect(function()
+if isfile("VexHubSettings.txt") then
 delfile("VexHubSettings.txt")
+end
+if isfile(The.path.FL) then
 delfile(The.path.FL)
+end
 ResetData.Text = "Data Resets Successfully!"
 end)
 
