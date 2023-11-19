@@ -1,0 +1,138 @@
+_G.settingsTable = {
+UIScale = "1.05";
+ButtonTopLeft = true;
+Wallpaper = "11926598891";
+WhiteBackground = true;
+OpenButtonFloating = false;
+EnabledNotifications = true;
+AnimationDelay = 0.6;
+}
+
+for i,v in pairs(_G.settingsTable) do 
+end
+
+local filename = "VexHubSettings.txt";
+
+function loadSettings()
+local HttpService = game:GetService("HttpService")
+if (readfile and isfile and isfile(filename)) then
+_G.settingsTable = HttpService:JSONDecode(readfile(filename));
+for i,v in pairs(_G.settingsTable) do 
+end
+end
+end
+
+function saveSettings()
+local json;
+local HttpService = game:GetService("HttpService"); 
+if (writefile) then
+json = HttpService:JSONEncode(_G.settingsTable);
+writefile(filename, json);
+end
+end
+
+loadSettings()
+wait()
+
+-- (VOID) : Gui to Lua
+-- Version: 1.4
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local NerdSettings = Instance.new("ImageLabel")
+local UICorner = Instance.new("UICorner")
+local NerdSettingsText = Instance.new("TextLabel")
+local ResetData = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local UIStroke = Instance.new("UIStroke")
+local NoAnimation = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local UIStroke_2 = Instance.new("UIStroke")
+local The = loadstring(game:HttpGet("https://raw.githubusercontent.com/Forbidennstuffs/SumStuff/main/Configuration"))()
+
+--Properties:
+
+ScreenGui.Parent = game:GetService("CoreGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+NerdSettings.Name = "NerdSettings"
+NerdSettings.Parent = ScreenGui
+NerdSettings.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+NerdSettings.BorderColor3 = Color3.fromRGB(0, 0, 0)
+NerdSettings.BorderSizePixel = 0
+NerdSettings.Position = UDim2.new(0.344008267, 0, 0.384146333, 0)
+NerdSettings.Size = UDim2.new(0, 200, 0, 100)
+NerdSettings.Image = "rbxassetid://11926598891"
+NerdSettings.ImageTransparency = 0.500
+NerdSettings.ScaleType = Enum.ScaleType.Crop
+
+UICorner.CornerRadius = UDim.new(0, 15)
+UICorner.Parent = NerdSettings
+
+NerdSettingsText.Name = "NerdSettingsText"
+NerdSettingsText.Parent = NerdSettings
+NerdSettingsText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+NerdSettingsText.BackgroundTransparency = 1.000
+NerdSettingsText.BorderColor3 = Color3.fromRGB(0, 0, 0)
+NerdSettingsText.BorderSizePixel = 0
+NerdSettingsText.Size = UDim2.new(0, 200, 0, 30)
+NerdSettingsText.Font = Enum.Font.GothamBold
+NerdSettingsText.Text = "Nerd Settings"
+NerdSettingsText.TextColor3 = Color3.fromRGB(255, 255, 255)
+NerdSettingsText.TextSize = 20.000
+
+ResetData.Name = "ResetData"
+ResetData.Parent = NerdSettings
+ResetData.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ResetData.BackgroundTransparency = 0.900
+ResetData.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ResetData.BorderSizePixel = 0
+ResetData.Position = UDim2.new(0.0250000004, 0, 0.298977673, 0)
+ResetData.Size = UDim2.new(0, 190, 0, 20)
+ResetData.Font = Enum.Font.Gotham
+ResetData.Text = "Reset Data"
+ResetData.TextColor3 = Color3.fromRGB(255, 255, 255)
+ResetData.TextSize = 14.000
+
+UICorner_2.Parent = ResetData
+
+UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke.Color = Color3.fromRGB(255, 255, 255)
+UIStroke.Thickness = 0.500
+UIStroke.Transparency = 0.700
+UIStroke.Parent = ResetData
+
+NoAnimation.Name = "NoAnimation"
+NoAnimation.Parent = NerdSettings
+NoAnimation.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+NoAnimation.BackgroundTransparency = 0.900
+NoAnimation.BorderColor3 = Color3.fromRGB(0, 0, 0)
+NoAnimation.BorderSizePixel = 0
+NoAnimation.Position = UDim2.new(0.0250000004, 0, 0.568977654, 0)
+NoAnimation.Size = UDim2.new(0, 190, 0, 20)
+NoAnimation.Font = Enum.Font.Gotham
+NoAnimation.Text = "No Animation"
+NoAnimation.TextColor3 = Color3.fromRGB(255, 255, 255)
+NoAnimation.TextSize = 14.000
+
+UICorner_3.Parent = NoAnimation
+
+UIStroke_2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke_2.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_2.Thickness = 0.500
+UIStroke_2.Transparency = 0.700
+UIStroke_2.Parent = NoAnimation
+
+ResetData.MouseButton1Down:connect(function()
+delfile("VexHubSettings.txt")
+delfile(The.path.FL)
+ResetData.Text = "Data Resets Successfully!"
+end)
+
+NoAnimation.MouseButton1Down:connect(function()
+_G.settingsTable.AnimationDelay = 0
+saveSettings()
+getgenv().AnimationDelay = 0
+NoAnimation.Text = "Set AnimationDelay To 0"
+end)
