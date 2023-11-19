@@ -66,6 +66,8 @@ NerdSettings.Size = UDim2.new(0, 200, 0, 100)
 NerdSettings.Image = "rbxassetid://11926598891"
 NerdSettings.ImageTransparency = 0.500
 NerdSettings.ScaleType = Enum.ScaleType.Crop
+NerdSettings.Active = true
+NerdSettings.Draggable = true
 
 UICorner.CornerRadius = UDim.new(0, 15)
 UICorner.Parent = NerdSettings
