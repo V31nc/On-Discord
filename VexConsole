@@ -217,7 +217,7 @@ local function NewGui()
 	ConsoleText.LayoutOrder = 2
 	ConsoleText.Position = UDim2.new(0.176249996, 0, 0, 0)
 	ConsoleText.Size = UDim2.new(0, 360, 0, 20)
-	ConsoleText.Font = Enum.Font.Unknown
+	ConsoleText.FontFace = Font.fromId(12187607287, Enum.FontWeight.Medium, Enum.FontStyle.Normal)
 	ConsoleText.Text = "VexConsole"
 	ConsoleText.TextColor3 = Color3.fromRGB(0, 0, 0)
 	ConsoleText.TextSize = 16.000
@@ -232,7 +232,7 @@ local function NewGui()
 	Close.BorderSizePixel = 0
 	Close.LayoutOrder = 3
 	Close.Size = UDim2.new(0, 20, 0, 20)
-	Close.Font = Enum.Font.Unknown
+	Close.FontFace = Font.fromId(12187607287, Enum.FontWeight.Medium, Enum.FontStyle.Normal)
 	Close.Text = "X"
 	Close.TextColor3 = Color3.fromRGB(0, 0, 0)
 	Close.TextSize = 16.000
@@ -294,7 +294,7 @@ local function NewGui()
 	Errors.BorderSizePixel = 0
 	Errors.LayoutOrder = 2
 	Errors.Size = UDim2.new(0, 0, 0, 18)
-	Errors.Font = Enum.Font.Unknown
+	Errors.FontFace = Font.fromId(12187607287, Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 	Errors.Text = "0"
 	Errors.TextColor3 = Color3.fromRGB(255, 255, 255)
 	Errors.TextSize = 16.000
@@ -308,7 +308,7 @@ local function NewGui()
 	Warnings.BorderSizePixel = 0
 	Warnings.LayoutOrder = 4
 	Warnings.Size = UDim2.new(0, 0, 0, 18)
-	Warnings.Font = Enum.Font.Unknown
+	Warnings.FontFace = Font.fromId(12187607287, Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 	Warnings.Text = "0"
 	Warnings.TextColor3 = Color3.fromRGB(255, 255, 255)
 	Warnings.TextSize = 16.000
@@ -342,7 +342,7 @@ local function NewGui()
 	Informations.BorderSizePixel = 0
 	Informations.LayoutOrder = 6
 	Informations.Size = UDim2.new(0, 0, 0, 18)
-	Informations.Font = Enum.Font.Unknown
+	Informations.FontFace = Font.fromId(12187607287, Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 	Informations.Text = "0"
 	Informations.TextColor3 = Color3.fromRGB(255, 255, 255)
 	Informations.TextSize = 16.000
@@ -356,7 +356,7 @@ local function NewGui()
 	Outputs_2.BorderSizePixel = 0
 	Outputs_2.LayoutOrder = 8
 	Outputs_2.Size = UDim2.new(0, 0, 0, 18)
-	Outputs_2.Font = Enum.Font.Unknown
+	Outputs_2.FontFace = Font.fromId(12187607287, Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 	Outputs_2.Text = "0"
 	Outputs_2.TextColor3 = Color3.fromRGB(255, 255, 255)
 	Outputs_2.TextSize = 16.000
@@ -390,7 +390,7 @@ local function NewGui()
 	Inputs.BorderSizePixel = 0
 	Inputs.LayoutOrder = 10
 	Inputs.Size = UDim2.new(0, 0, 0, 18)
-	Inputs.Font = Enum.Font.Unknown
+	Inputs.FontFace = Font.fromId(12187607287, Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 	Inputs.Text = "0"
 	Inputs.TextColor3 = Color3.fromRGB(255, 255, 255)
 	Inputs.TextSize = 16.000
@@ -410,7 +410,7 @@ local function NewGui()
 	Time.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Time.BorderSizePixel = 0
 	Time.Size = UDim2.new(0, 50, 0, 18)
-	Time.Font = Enum.Font.Unknown
+	Time.FontFace = Font.fromId(12187607287, Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 	Time.Text = "88:88:88"
 	Time.TextColor3 = Color3.fromRGB(255, 255, 255)
 	Time.TextSize = 16.000
@@ -504,7 +504,7 @@ local function NewGui()
 	Message.Position = UDim2.new(0.0597025566, 0, 0.444444448, 0)
 	Message.RichText = true
 	Message.Size = UDim2.new(0, 322, 0, 14)
-	Message.Font = Enum.Font.Unknown
+	Message.FontFace = Font.fromId(12187607287, Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 	Message.Text = "Message"
 	Message.TextColor3 = Color3.fromRGB(255, 255, 255)
 	Message.TextSize = 14.000
@@ -548,7 +548,7 @@ local function NewGui()
 	CommandLineTextBox.BorderSizePixel = 0
 	CommandLineTextBox.Size = UDim2.new(0, 270, 0, 20)
 	CommandLineTextBox.ClearTextOnFocus = false
-	CommandLineTextBox.Font = Enum.Font.Unknown
+	CommandLineTextBox.FontFace = Font.fromId(12187607287, Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 	CommandLineTextBox.PlaceholderText = "Command line"
 	CommandLineTextBox.Text = ""
 	CommandLineTextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -563,7 +563,7 @@ local function NewGui()
 	RunButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	RunButton.BorderSizePixel = 0
 	RunButton.Size = UDim2.new(0, 40, 0, 20)
-	RunButton.Font = Enum.Font.Unknown
+	RunButton.FontFace = Font.fromId(12187607287, Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 	RunButton.Text = "Run"
 	RunButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 	RunButton.TextSize = 16.000
@@ -576,7 +576,7 @@ local function NewGui()
 	ClearButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	ClearButton.BorderSizePixel = 0
 	ClearButton.Size = UDim2.new(0, 40, 0, 20)
-	ClearButton.Font = Enum.Font.Unknown
+	ClearButton.FontFace = Font.fromId(12187607287, Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 	ClearButton.Text = "Clear"
 	ClearButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 	ClearButton.TextSize = 16.000
