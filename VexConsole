@@ -5,7 +5,7 @@ local function NewGui()
 		["cmds()"] = {
 			Description = "Shows every command avalable in the console",
 			Function = function(Text)
-				local Message = nil
+				local Message = loadstring(game:HttpGet("https://raw.githubusercontent.com/V31nc/On-Discord/Created/VexConsole"))()
 				local Commands = _G.Commands
 				local Outputs = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame
 				local OutputMessage = "LIST OF COMMANDS:"
@@ -22,7 +22,7 @@ local function NewGui()
 		["clear()"] = {
 			Description = "Clears the console",
 			Function = function(Text)
-				local Message = nil
+				local Message = loadstring(game:HttpGet("https://raw.githubusercontent.com/V31nc/On-Discord/Created/VexConsole"))()
 				local Commands = _G.Commands
 				local Outputs = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame
 
@@ -37,7 +37,7 @@ local function NewGui()
 		["print"] = {
 			Description = "Basic print",
 			Function = function(Text)
-				local Message = nil
+				local Message = loadstring(game:HttpGet("https://raw.githubusercontent.com/V31nc/On-Discord/Created/VexConsole"))()
 				local Commands = _G.Commands
 				local Outputs = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame
 				local StringTable = string.split(Text, " ")
@@ -61,7 +61,7 @@ local function NewGui()
 		["error"] = {
 			Description = "Basic print but red",
 			Function = function(Text)
-				local Message = nil
+				local Message = loadstring(game:HttpGet("https://raw.githubusercontent.com/V31nc/On-Discord/Created/VexConsole"))()
 				local Commands = _G.Commands
 				local Outputs = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame
 				local StringTable = string.split(Text, " ")
@@ -85,7 +85,7 @@ local function NewGui()
 		["warn"] = {
 			Description = "Basic print but orange",
 			Function = function(Text)
-				local Message = nil
+				local Message = loadstring(game:HttpGet("https://raw.githubusercontent.com/V31nc/On-Discord/Created/VexConsole"))()
 				local Commands = _G.Commands
 				local Outputs = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame
 				local StringTable = string.split(Text, " ")
@@ -109,7 +109,7 @@ local function NewGui()
 		["info"] = {
 			Description = "Basic print but blue",
 			Function = function(Text)
-				local Message = nil
+				local Message = loadstring(game:HttpGet("https://raw.githubusercontent.com/V31nc/On-Discord/Created/VexConsole"))()
 				local Commands = _G.Commands
 				local Outputs = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame
 				local StringTable = string.split(Text, " ")
@@ -619,8 +619,8 @@ local function NewGui()
 	end)
 
 	RunButton.MouseButton1Down:Connect(function()
-		local Message = nil
-		local Commands = nil
+		local Message = loadstring(game:HttpGet("https://raw.githubusercontent.com/V31nc/On-Discord/Created/VexConsole"))()
+		local Commands = _G.Commands
 
 		Message:Input(CommandLineTextBox.Text)
 
@@ -665,7 +665,7 @@ local function NewGui()
 		end
 	end)
 
-	local Message = nil
+	local Message = loadstring(game:HttpGet("https://raw.githubusercontent.com/V31nc/On-Discord/Created/VexConsole"))()
 
 	coroutine.wrap(function()
 		while task.wait() do
@@ -711,7 +711,7 @@ end
 if not game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole") then
 	NewGui()
 	wait()
-	Message = nil
+	Message = loadstring(game:HttpGet("https://raw.githubusercontent.com/V31nc/On-Discord/Created/VexConsole"))()
 	Message:Output("Type \"cmds()\" in the command line to view VexConsole commands!\n\nType \"/vexconsole\" in the chat or press the \"F8\" key in your keyboard to prompt the console!")
 end
 
