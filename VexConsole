@@ -1,0 +1,898 @@
+-- V31nc : GUI to LUA V1
+
+-- Instances:
+
+local VexDeveloperConsole = Instance.new("ScreenGui")
+local MainFrame = Instance.new("Frame")
+local TopFrame = Instance.new("Frame")
+local UIListLayout = Instance.new("UIListLayout")
+local ConsoleText = Instance.new("TextLabel")
+local Close = Instance.new("TextButton")
+local UIListLayout_2 = Instance.new("UIListLayout")
+local BottomFrame = Instance.new("Frame")
+local TopFrame_2 = Instance.new("Frame")
+local Outputs = Instance.new("Frame")
+local UIListLayout_3 = Instance.new("UIListLayout")
+local ErrorImage = Instance.new("ImageLabel")
+local Errors = Instance.new("TextLabel")
+local Warnings = Instance.new("TextLabel")
+local WarningImage = Instance.new("ImageLabel")
+local InformationImage = Instance.new("ImageLabel")
+local Informations = Instance.new("TextLabel")
+local Outputs_2 = Instance.new("TextLabel")
+local OutputImage = Instance.new("ImageLabel")
+local InputImage = Instance.new("ImageLabel")
+local Inputs = Instance.new("TextLabel")
+local UIListLayout_4 = Instance.new("UIListLayout")
+local Time = Instance.new("TextLabel")
+local UIListLayout_5 = Instance.new("UIListLayout")
+local BottomFrame_2 = Instance.new("Frame")
+local UIListLayout_6 = Instance.new("UIListLayout")
+local ScrollingFrameParent = Instance.new("Frame")
+local ScrollingFrame = Instance.new("ScrollingFrame")
+local UIListLayout_7 = Instance.new("UIListLayout")
+local Template = Instance.new("Frame")
+local Image = Instance.new("ImageLabel")
+local UIListLayout_8 = Instance.new("UIListLayout")
+local Message = Instance.new("TextLabel")
+local Border = Instance.new("Frame")
+local Border_2 = Instance.new("Frame")
+local BottomFrame_3 = Instance.new("Frame")
+local UIListLayout_9 = Instance.new("UIListLayout")
+local CommandLineTextBox = Instance.new("TextBox")
+local RunButton = Instance.new("TextButton")
+local ClearButton = Instance.new("TextButton")
+local CenterPosition = Instance.new("Frame")
+local Frame = Instance.new("Frame")
+local UIListLayout_10 = Instance.new("UIListLayout")
+
+--Properties:
+
+VexDeveloperConsole.Name = "VexDeveloperConsole"
+VexDeveloperConsole.Parent = game:GetService("CoreGui")
+VexDeveloperConsole.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = VexDeveloperConsole
+MainFrame.Active = true
+MainFrame.BackgroundColor3 = Color3.fromRGB(46, 46, 46)
+MainFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+MainFrame.BorderSizePixel = 0
+MainFrame.ClipsDescendants = true
+MainFrame.LayoutOrder = 2
+MainFrame.Position = UDim2.new(0, 64, 0, 223)
+MainFrame.Size = UDim2.new(0, 400, 0, 230)
+
+TopFrame.Name = "TopFrame"
+TopFrame.Parent = MainFrame
+TopFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TopFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TopFrame.BorderSizePixel = 0
+TopFrame.Size = UDim2.new(1, 0, 0, 20)
+
+UIListLayout.Parent = TopFrame
+UIListLayout.FillDirection = Enum.FillDirection.Horizontal
+UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout.Padding = UDim.new(0, 3)
+
+ConsoleText.Name = "ConsoleText"
+ConsoleText.Parent = TopFrame
+ConsoleText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ConsoleText.BackgroundTransparency = 1.000
+ConsoleText.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ConsoleText.BorderSizePixel = 0
+ConsoleText.LayoutOrder = 2
+ConsoleText.Position = UDim2.new(0.176249996, 0, 0, 0)
+ConsoleText.Size = UDim2.new(0, 360, 0, 20)
+ConsoleText.Font = Enum.Font.Unknown
+ConsoleText.Text = "VexConsole"
+ConsoleText.TextColor3 = Color3.fromRGB(0, 0, 0)
+ConsoleText.TextSize = 16.000
+ConsoleText.TextWrapped = true
+ConsoleText.TextXAlignment = Enum.TextXAlignment.Left
+
+Close.Name = "Close"
+Close.Parent = TopFrame
+Close.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Close.BackgroundTransparency = 1.000
+Close.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Close.BorderSizePixel = 0
+Close.LayoutOrder = 3
+Close.Size = UDim2.new(0, 20, 0, 20)
+Close.Font = Enum.Font.Unknown
+Close.Text = "X"
+Close.TextColor3 = Color3.fromRGB(0, 0, 0)
+Close.TextSize = 16.000
+
+UIListLayout_2.Parent = MainFrame
+UIListLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_2.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout_2.Padding = UDim.new(0, 7)
+
+BottomFrame.Name = "BottomFrame"
+BottomFrame.Parent = MainFrame
+BottomFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+BottomFrame.BackgroundTransparency = 1.000
+BottomFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+BottomFrame.BorderSizePixel = 0
+BottomFrame.Position = UDim2.new(0, 0, 0.336956531, 0)
+BottomFrame.Size = UDim2.new(1, 0, 0, 203)
+
+TopFrame_2.Name = "TopFrame"
+TopFrame_2.Parent = BottomFrame
+TopFrame_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TopFrame_2.BackgroundTransparency = 0.500
+TopFrame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TopFrame_2.BorderSizePixel = 0
+TopFrame_2.Size = UDim2.new(0.949999988, 0, 0, 20)
+
+Outputs.Name = "Outputs"
+Outputs.Parent = TopFrame_2
+Outputs.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Outputs.BackgroundTransparency = 1.000
+Outputs.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Outputs.BorderSizePixel = 0
+Outputs.Position = UDim2.new(0.236842111, 0, 0, 0)
+Outputs.Size = UDim2.new(0, 170, 0, 20)
+
+UIListLayout_3.Parent = Outputs
+UIListLayout_3.FillDirection = Enum.FillDirection.Horizontal
+UIListLayout_3.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_3.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_3.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout_3.Padding = UDim.new(0, 3)
+
+ErrorImage.Name = "ErrorImage"
+ErrorImage.Parent = Outputs
+ErrorImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ErrorImage.BackgroundTransparency = 1.000
+ErrorImage.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ErrorImage.BorderSizePixel = 0
+ErrorImage.LayoutOrder = 1
+ErrorImage.Size = UDim2.new(0, 20, 0, 20)
+ErrorImage.Image = "http://www.roblox.com/asset/?id=18121298607"
+
+Errors.Name = "Errors"
+Errors.Parent = Outputs
+Errors.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Errors.BackgroundTransparency = 1.000
+Errors.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Errors.BorderSizePixel = 0
+Errors.LayoutOrder = 2
+Errors.Size = UDim2.new(0, 0, 0, 18)
+Errors.Font = Enum.Font.Unknown
+Errors.Text = "0"
+Errors.TextColor3 = Color3.fromRGB(255, 255, 255)
+Errors.TextSize = 16.000
+Errors.TextWrapped = true
+
+Warnings.Name = "Warnings"
+Warnings.Parent = Outputs
+Warnings.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Warnings.BackgroundTransparency = 1.000
+Warnings.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Warnings.BorderSizePixel = 0
+Warnings.LayoutOrder = 4
+Warnings.Size = UDim2.new(0, 0, 0, 18)
+Warnings.Font = Enum.Font.Unknown
+Warnings.Text = "0"
+Warnings.TextColor3 = Color3.fromRGB(255, 255, 255)
+Warnings.TextSize = 16.000
+Warnings.TextWrapped = true
+
+WarningImage.Name = "WarningImage"
+WarningImage.Parent = Outputs
+WarningImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+WarningImage.BackgroundTransparency = 1.000
+WarningImage.BorderColor3 = Color3.fromRGB(0, 0, 0)
+WarningImage.BorderSizePixel = 0
+WarningImage.LayoutOrder = 3
+WarningImage.Size = UDim2.new(0, 20, 0, 20)
+WarningImage.Image = "http://www.roblox.com/asset/?id=18121290881"
+
+InformationImage.Name = "InformationImage"
+InformationImage.Parent = Outputs
+InformationImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+InformationImage.BackgroundTransparency = 1.000
+InformationImage.BorderColor3 = Color3.fromRGB(0, 0, 0)
+InformationImage.BorderSizePixel = 0
+InformationImage.LayoutOrder = 5
+InformationImage.Size = UDim2.new(0, 20, 0, 20)
+InformationImage.Image = "http://www.roblox.com/asset/?id=18121294506"
+
+Informations.Name = "Informations"
+Informations.Parent = Outputs
+Informations.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Informations.BackgroundTransparency = 1.000
+Informations.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Informations.BorderSizePixel = 0
+Informations.LayoutOrder = 6
+Informations.Size = UDim2.new(0, 0, 0, 18)
+Informations.Font = Enum.Font.Unknown
+Informations.Text = "0"
+Informations.TextColor3 = Color3.fromRGB(255, 255, 255)
+Informations.TextSize = 16.000
+Informations.TextWrapped = true
+
+Outputs_2.Name = "Outputs"
+Outputs_2.Parent = Outputs
+Outputs_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Outputs_2.BackgroundTransparency = 1.000
+Outputs_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Outputs_2.BorderSizePixel = 0
+Outputs_2.LayoutOrder = 8
+Outputs_2.Size = UDim2.new(0, 0, 0, 18)
+Outputs_2.Font = Enum.Font.Unknown
+Outputs_2.Text = "0"
+Outputs_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Outputs_2.TextSize = 16.000
+Outputs_2.TextWrapped = true
+
+OutputImage.Name = "OutputImage"
+OutputImage.Parent = Outputs
+OutputImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+OutputImage.BackgroundTransparency = 1.000
+OutputImage.BorderColor3 = Color3.fromRGB(0, 0, 0)
+OutputImage.BorderSizePixel = 0
+OutputImage.LayoutOrder = 7
+OutputImage.Size = UDim2.new(0, 20, 0, 20)
+OutputImage.Image = "http://www.roblox.com/asset/?id=18121286381"
+
+InputImage.Name = "InputImage"
+InputImage.Parent = Outputs
+InputImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+InputImage.BackgroundTransparency = 1.000
+InputImage.BorderColor3 = Color3.fromRGB(0, 0, 0)
+InputImage.BorderSizePixel = 0
+InputImage.LayoutOrder = 9
+InputImage.Size = UDim2.new(0, 20, 0, 20)
+InputImage.Image = "rbxassetid://11704876885"
+
+Inputs.Name = "Inputs"
+Inputs.Parent = Outputs
+Inputs.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Inputs.BackgroundTransparency = 1.000
+Inputs.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Inputs.BorderSizePixel = 0
+Inputs.LayoutOrder = 10
+Inputs.Size = UDim2.new(0, 0, 0, 18)
+Inputs.Font = Enum.Font.Unknown
+Inputs.Text = "0"
+Inputs.TextColor3 = Color3.fromRGB(255, 255, 255)
+Inputs.TextSize = 16.000
+Inputs.TextWrapped = true
+
+UIListLayout_4.Parent = TopFrame_2
+UIListLayout_4.FillDirection = Enum.FillDirection.Horizontal
+UIListLayout_4.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_4.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_4.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout_4.Padding = UDim.new(0, 7)
+
+Time.Name = "Time"
+Time.Parent = TopFrame_2
+Time.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Time.BackgroundTransparency = 1.000
+Time.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Time.BorderSizePixel = 0
+Time.Size = UDim2.new(0, 50, 0, 18)
+Time.Font = Enum.Font.Unknown
+Time.Text = "88:88:88"
+Time.TextColor3 = Color3.fromRGB(255, 255, 255)
+Time.TextSize = 16.000
+Time.TextWrapped = true
+
+UIListLayout_5.Parent = BottomFrame
+UIListLayout_5.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_5.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_5.Padding = UDim.new(0, 5)
+
+BottomFrame_2.Name = "BottomFrame"
+BottomFrame_2.Parent = BottomFrame
+BottomFrame_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+BottomFrame_2.BackgroundTransparency = 0.500
+BottomFrame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+BottomFrame_2.BorderSizePixel = 0
+BottomFrame_2.Position = UDim2.new(0, 0, 0.0985221639, 0)
+BottomFrame_2.Size = UDim2.new(0.949999988, 0, 0, 170)
+
+UIListLayout_6.Parent = BottomFrame_2
+UIListLayout_6.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_6.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_6.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout_6.Padding = UDim.new(0, 7)
+
+ScrollingFrameParent.Name = "ScrollingFrameParent"
+ScrollingFrameParent.Parent = BottomFrame_2
+ScrollingFrameParent.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScrollingFrameParent.BackgroundTransparency = 1.000
+ScrollingFrameParent.BorderColor3 = Color3.fromRGB(255, 255, 255)
+ScrollingFrameParent.BorderSizePixel = 0
+ScrollingFrameParent.ClipsDescendants = true
+ScrollingFrameParent.Position = UDim2.new(0.0250000004, 0, 0.200598806, 0)
+ScrollingFrameParent.Size = UDim2.new(0.949999988, 0, 0, 130)
+
+ScrollingFrame.Parent = ScrollingFrameParent
+ScrollingFrame.Active = true
+ScrollingFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ScrollingFrame.BackgroundTransparency = 0.500
+ScrollingFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScrollingFrame.BorderSizePixel = 0
+ScrollingFrame.Size = UDim2.new(1, 0, 1, 0)
+ScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
+ScrollingFrame.ScrollBarThickness = 2
+
+UIListLayout_7.Parent = ScrollingFrame
+UIListLayout_7.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_7.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_7.Padding = UDim.new(0, 5)
+
+Template.Name = "Template"
+Template.Parent = ScrollingFrame
+Template.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Template.BackgroundTransparency = 1.000
+Template.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Template.BorderSizePixel = 0
+Template.LayoutOrder = 1
+Template.Position = UDim2.new(0.0250000674, 0, 0, 0)
+Template.Size = UDim2.new(0.949999988, 0, 0, 0)
+Template.Visible = false
+
+Image.Name = "Image"
+Image.Parent = Template
+Image.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Image.BackgroundTransparency = 1.000
+Image.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Image.BorderSizePixel = 0
+Image.Size = UDim2.new(0, 14, 0, 14)
+Image.Image = "http://www.roblox.com/asset/?id=18121286381"
+
+UIListLayout_8.Parent = Template
+UIListLayout_8.FillDirection = Enum.FillDirection.Horizontal
+UIListLayout_8.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_8.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_8.Padding = UDim.new(0, 5)
+
+Message.Name = "Message"
+Message.Parent = Template
+Message.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Message.BackgroundTransparency = 1.000
+Message.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Message.BorderSizePixel = 0
+Message.Position = UDim2.new(0.0597025566, 0, 0.444444448, 0)
+Message.RichText = true
+Message.Size = UDim2.new(0, 322, 0, 14)
+Message.Font = Enum.Font.Unknown
+Message.Text = "Message"
+Message.TextColor3 = Color3.fromRGB(255, 255, 255)
+Message.TextSize = 14.000
+Message.TextWrapped = true
+Message.TextXAlignment = Enum.TextXAlignment.Left
+
+Border.Name = "Border"
+Border.Parent = ScrollingFrame
+Border.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Border.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Border.BorderSizePixel = 0
+
+Border_2.Name = "Border"
+Border_2.Parent = ScrollingFrame
+Border_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Border_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Border_2.BorderSizePixel = 0
+Border_2.LayoutOrder = 2
+
+BottomFrame_3.Name = "BottomFrame"
+BottomFrame_3.Parent = BottomFrame_2
+BottomFrame_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+BottomFrame_3.BackgroundTransparency = 1.000
+BottomFrame_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+BottomFrame_3.BorderSizePixel = 0
+BottomFrame_3.Position = UDim2.new(0.368421048, 0, 0.621257484, 0)
+BottomFrame_3.Size = UDim2.new(0.949999988, 0, 0, 20)
+
+UIListLayout_9.Parent = BottomFrame_3
+UIListLayout_9.FillDirection = Enum.FillDirection.Horizontal
+UIListLayout_9.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_9.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_9.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout_9.Padding = UDim.new(0, 5)
+
+CommandLineTextBox.Name = "CommandLineTextBox"
+CommandLineTextBox.Parent = BottomFrame_3
+CommandLineTextBox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+CommandLineTextBox.BackgroundTransparency = 0.500
+CommandLineTextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CommandLineTextBox.BorderSizePixel = 0
+CommandLineTextBox.Size = UDim2.new(0, 270, 0, 20)
+CommandLineTextBox.ClearTextOnFocus = false
+CommandLineTextBox.Font = Enum.Font.Unknown
+CommandLineTextBox.PlaceholderText = "Command line"
+CommandLineTextBox.Text = ""
+CommandLineTextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+CommandLineTextBox.TextSize = 14.000
+CommandLineTextBox.TextWrapped = true
+CommandLineTextBox.TextXAlignment = Enum.TextXAlignment.Left
+
+RunButton.Name = "RunButton"
+RunButton.Parent = BottomFrame_3
+RunButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+RunButton.BackgroundTransparency = 0.500
+RunButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+RunButton.BorderSizePixel = 0
+RunButton.Size = UDim2.new(0, 40, 0, 20)
+RunButton.Font = Enum.Font.Unknown
+RunButton.Text = "Run"
+RunButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+RunButton.TextSize = 16.000
+RunButton.TextWrapped = true
+
+ClearButton.Name = "ClearButton"
+ClearButton.Parent = BottomFrame_3
+ClearButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ClearButton.BackgroundTransparency = 0.500
+ClearButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ClearButton.BorderSizePixel = 0
+ClearButton.Size = UDim2.new(0, 40, 0, 20)
+ClearButton.Font = Enum.Font.Unknown
+ClearButton.Text = "Clear"
+ClearButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+ClearButton.TextSize = 16.000
+ClearButton.TextWrapped = true
+
+CenterPosition.Name = "CenterPosition"
+CenterPosition.Parent = VexDeveloperConsole
+CenterPosition.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CenterPosition.BackgroundTransparency = 1.000
+CenterPosition.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CenterPosition.BorderSizePixel = 0
+CenterPosition.LayoutOrder = 1
+CenterPosition.Size = UDim2.new(1, 0, 1, 0)
+
+Frame.Parent = CenterPosition
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.BackgroundTransparency = 1.000
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Size = UDim2.new(0, 400, 0, 230)
+
+UIListLayout_10.Parent = CenterPosition
+UIListLayout_10.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_10.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_10.VerticalAlignment = Enum.VerticalAlignment.Center
+
+-- Module Scripts:
+
+local fake_module_scripts = {}
+
+do -- VexDeveloperConsole.Message
+	local script = Instance.new('ModuleScript', VexDeveloperConsole)
+	script.Name = "Message"
+	local function module_script()
+		local Message = {}
+		local Parent = script.Parent.MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame
+		
+		function Message:Error(Message)
+			coroutine.wrap(function()
+				local Template = Parent.Template:Clone()
+				
+				Template.Name = "Error"
+				Template.Parent = Parent
+				Template.Type.Value = "Error"
+				Template.Image.Image = "http://www.roblox.com/asset/?id=18121298607"
+				Template.Message.TextColor3 = Color3.fromRGB(255, 102, 102)
+				Template.Message.Text = os.date("%H:%M:%S -- Error\n"..Message)
+				Template.Visible = true
+			end)()
+		end
+		
+		function Message:Warning(Message)
+			coroutine.wrap(function()
+				local Template = Parent.Template:Clone()
+				
+				Template.Name = "Warning"
+				Template.Parent = Parent
+				Template.Type.Value = "Warning"
+				Template.Image.Image = "http://www.roblox.com/asset/?id=18121290881"
+				Template.Message.TextColor3 = Color3.fromRGB(255, 188, 87)
+				Template.Message.Text = os.date("%H:%M:%S -- Warning\n"..Message)
+				Template.Visible = true
+			end)()
+		end
+		
+		function Message:Information(Message)
+			coroutine.wrap(function()
+				local Template = Parent.Template:Clone()
+				
+				Template.Name = "Information"
+				Template.Parent = Parent
+				Template.Type.Value = "Information"
+				Template.Image.Image = "http://www.roblox.com/asset/?id=18121294506"
+				Template.Message.TextColor3 = Color3.fromRGB(76, 188, 255)
+				Template.Message.Text = os.date("%H:%M:%S -- Information\n"..Message)
+				Template.Visible = true
+			end)()
+		end
+		
+		function Message:Output(Message)
+			coroutine.wrap(function()
+				local Template = Parent.Template:Clone()
+				
+				Template.Name = "Output"
+				Template.Parent = Parent
+				Template.Type.Value = "Output"
+				Template.Image.Image = "http://www.roblox.com/asset/?id=18121286381"
+				Template.Message.TextColor3 = Color3.fromRGB(255, 255, 255)
+				Template.Message.Text = os.date("%H:%M:%S -- Output\n"..Message)
+				Template.Visible = true
+			end)()
+		end
+		
+		function Message:Input(Message)
+			coroutine.wrap(function()
+				local Template = Parent.Template:Clone()
+				
+				Template.Name = "Input"
+				Template.Parent = Parent
+				Template.Type.Value = "Input"
+				Template.Image.Image = "http://www.roblox.com/asset/?id=11704876885"
+				Template.Message.TextColor3 = Color3.fromRGB(255, 255, 255)
+				Template.Message.Text = os.date("%H:%M:%S -- Input\n> "..Message)
+				Template.Visible = true
+			end)()
+		end
+		
+		return Message
+	end
+	fake_module_scripts[script] = module_script
+end
+do -- VexDeveloperConsole.Commands
+	local script = Instance.new('ModuleScript', VexDeveloperConsole)
+	script.Name = "Commands"
+	local function module_script()
+		local module = {
+			["cmds()"] = {
+				Description = "Shows every command avalable in the console",
+				Function = function(Text)
+					local Message = require(script.Parent.Message)
+					local Commands = require(script.Parent.Commands)
+					local Outputs = script.Parent.MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame
+					local OutputMessage = "LIST OF COMMANDS:"
+		
+					for i, v in Commands do
+						OutputMessage = OutputMessage.."\n"..i.." - "..v.Description
+					end
+		
+					wait()
+					Message:Output(OutputMessage)
+				end,
+			},
+		
+			["clear()"] = {
+				Description = "Clears the console",
+				Function = function(Text)
+					local Message = require(script.Parent.Message)
+					local Commands = require(script.Parent.Commands)
+					local Outputs = script.Parent.MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame
+		
+					for i, v in Outputs:GetChildren() do
+						if v:FindFirstChild("Type") and v.Name ~= "Template" then
+							v:Destroy()
+						end
+					end
+				end,
+			},
+		
+			["print"] = {
+				Description = "Basic print",
+				Function = function(Text)
+					local Message = require(script.Parent.Message)
+					local Commands = require(script.Parent.Commands)
+					local Outputs = script.Parent.MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame
+					local StringTable = string.split(Text, " ")
+					local NewString = ""
+		
+					for i, v in StringTable do
+						if i ~= 1 then
+							if NewString == "" then
+								NewString = v
+							else
+								NewString = NewString.." "..v
+							end
+						end
+					end
+		
+					wait()
+					Message:Output(NewString)
+				end,
+			},
+			
+			["error"] = {
+				Description = "Basic print but red",
+				Function = function(Text)
+					local Message = require(script.Parent.Message)
+					local Commands = require(script.Parent.Commands)
+					local Outputs = script.Parent.MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame
+					local StringTable = string.split(Text, " ")
+					local NewString = ""
+		
+					for i, v in StringTable do
+						if i ~= 1 then
+							if NewString == "" then
+								NewString = v
+							else
+								NewString = NewString.." "..v
+							end
+						end
+					end
+		
+					wait()
+					Message:Error(NewString)
+				end,
+			},
+			
+			["warn"] = {
+				Description = "Basic print but orange",
+				Function = function(Text)
+					local Message = require(script.Parent.Message)
+					local Commands = require(script.Parent.Commands)
+					local Outputs = script.Parent.MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame
+					local StringTable = string.split(Text, " ")
+					local NewString = ""
+		
+					for i, v in StringTable do
+						if i ~= 1 then
+							if NewString == "" then
+								NewString = v
+							else
+								NewString = NewString.." "..v
+							end
+						end
+					end
+		
+					wait()
+					Message:Warning(NewString)
+				end,
+			},
+			
+			["info"] = {
+				Description = "Basic print but blue",
+				Function = function(Text)
+					local Message = require(script.Parent.Message)
+					local Commands = require(script.Parent.Commands)
+					local Outputs = script.Parent.MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame
+					local StringTable = string.split(Text, " ")
+					local NewString = ""
+		
+					for i, v in StringTable do
+						if i ~= 1 then
+							if NewString == "" then
+								NewString = v
+							else
+								NewString = NewString.." "..v
+							end
+						end
+					end
+		
+					wait()
+					Message:Information(NewString)
+				end,
+			},
+		}
+		
+		return module
+		
+	end
+	fake_module_scripts[script] = module_script
+end
+
+
+-- Scripts:
+
+local function UQIYHTQ_fake_script() -- Close.LocalScript 
+	local script = Instance.new('LocalScript', Close)
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
+
+	script.Parent.MouseEnter:Connect(function()
+		script.Parent.BackgroundTransparency = 0
+		script.Parent.TextColor3 = Color3.new(255, 255, 255)
+	end)
+	
+	script.Parent.MouseLeave:Connect(function()
+		script.Parent.BackgroundTransparency = 1
+		script.Parent.TextColor3 = Color3.new(0, 0, 0)
+	end)
+	
+	script.Parent.MouseButton1Down:Connect(function()
+		script.Parent.Parent.Parent.Visible = false
+	end)
+	
+	game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessed)
+		if gameProcessed then return end 
+	
+		if input.KeyCode == Enum.KeyCode.F8 then
+			local CenterPosition = script.Parent.Parent.Parent.Parent.CenterPosition
+			if script.Parent.Parent.Parent.Visible == true then
+				script.Parent.Parent.Parent.Visible = false
+			else
+				script.Parent.Parent.Parent.Visible = true
+				script.Parent.Parent.Parent.Position = UDim2.new(0, CenterPosition.Frame.AbsolutePosition.X, 0, CenterPosition.Frame.AbsolutePosition.Y)
+			end
+		end
+	end)
+end
+coroutine.wrap(UQIYHTQ_fake_script)()
+local function IGFX_fake_script() -- Outputs.LocalScript 
+	local script = Instance.new('LocalScript', Outputs)
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
+
+	coroutine.wrap(function()
+		while task.wait() do
+			local OutputsTextLabel = script.Parent
+			local Messages = script.Parent.Parent.Parent.BottomFrame.ScrollingFrameParent.ScrollingFrame
+			local Errors = 0
+			local Warnings = 0
+			local Informations = 0
+			local Outputs = 0
+			local Inputs = 0
+			
+			for i, v in Messages:GetChildren() do
+				if v:FindFirstChild("Type") and v.Name ~= "Template" then
+					if v.Type.Value == "Error" then
+						Errors += 1
+					elseif v.Type.Value == "Warning" then
+						Warnings += 1
+					elseif v.Type.Value == "Information" then
+						Informations += 1
+					elseif v.Type.Value == "Output" then
+						Outputs += 1
+					elseif v.Type.Value == "Input" then
+						Inputs += 1
+					end
+				end
+			end
+			
+			wait()
+			OutputsTextLabel.Errors.Text = Errors
+			OutputsTextLabel.Warnings.Text = Warnings
+			OutputsTextLabel.Informations.Text = Informations
+			OutputsTextLabel.Outputs.Text = Outputs
+			OutputsTextLabel.Inputs.Text = Inputs
+		end
+	end)()
+end
+coroutine.wrap(IGFX_fake_script)()
+local function POEE_fake_script() -- Time.LocalScript 
+	local script = Instance.new('LocalScript', Time)
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
+
+	coroutine.wrap(function()
+		while task.wait() do
+			local TextLabel = script.Parent
+	
+			TextLabel.Text = os.date("%H:%M:%S")
+		end
+	end)()
+end
+coroutine.wrap(POEE_fake_script)()
+local function BMQNJJ_fake_script() -- BottomFrame_3.LocalScript 
+	local script = Instance.new('LocalScript', BottomFrame_3)
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
+
+	local Clear = script.Parent.ClearButton
+	local Run = script.Parent.RunButton
+	local TextBox = script.Parent.CommandLineTextBox
+	local Outputs = script.Parent.Parent.ScrollingFrameParent.ScrollingFrame
+	local Message = require(script.Parent.Parent.Parent.Parent.Parent.Message)
+	local Commands = require(script.Parent.Parent.Parent.Parent.Parent.Commands)
+	
+	Clear.MouseButton1Down:Connect(function()
+		for i, v in Outputs:GetChildren() do
+			if v:FindFirstChild("Type") and v.Name ~= "Template" then
+				v:Destroy()
+			end
+		end
+	end)
+	
+	Run.MouseButton1Down:Connect(function()
+		Message:Input(TextBox.Text)
+		
+		local StringTable = string.split(TextBox.Text, " ")
+		local Runned = false
+		
+		for i, v in Commands do
+			if string.find(string.lower(i), string.lower(StringTable[1])) and Runned == false then
+				Runned = true
+				v.Function(TextBox.Text)
+				
+				if i ~= StringTable[1] then
+					Message:Information("Autofill: "..i.." = "..StringTable[1].."?")
+				end
+			end
+		end
+		wait()
+		
+		if Runned == false then
+			Message:Error("Invalid command")
+		end
+	end)
+	
+end
+coroutine.wrap(BMQNJJ_fake_script)()
+local function SQHAP_fake_script() -- MainFrame.LocalScript 
+	local script = Instance.new('LocalScript', MainFrame)
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
+
+	script.Parent.Draggable = true
+end
+coroutine.wrap(SQHAP_fake_script)()
+local function EPCECHS_fake_script() -- MainFrame.LocalScript 
+	local script = Instance.new('LocalScript', MainFrame)
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
+
+	local CenterPosition = script.Parent.Parent.CenterPosition
+	
+	script.Parent.Position = UDim2.new(0, CenterPosition.Frame.AbsolutePosition.X, 0, CenterPosition.Frame.AbsolutePosition.Y)
+end
+coroutine.wrap(EPCECHS_fake_script)()
+local function WSVVWQB_fake_script() -- VexDeveloperConsole.LocalScript 
+	local script = Instance.new('LocalScript', VexDeveloperConsole)
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
+
+	local Message = require(script.Parent.Message)
+	
+	Message:Output("Type \"cmds()\" in the command line to view VexConsole commands!\n\nType \"/vexconsole\" in the chat or press the \"F8\" key in your keyboard to prompt the console!")
+end
+coroutine.wrap(WSVVWQB_fake_script)()
