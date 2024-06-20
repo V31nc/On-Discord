@@ -787,4 +787,8 @@ function Table:Input(Message)
 	end)()
 end
 
+function Table:Visible(bool)
+	game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.Visible = bool
+end
+
 return Table
