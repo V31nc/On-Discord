@@ -289,6 +289,7 @@ local function NewGui()
 
 	Errors.Name = "Errors"
 	Errors.Parent = Outputs
+	Errors.AutomaticSize = Enum.AutomaticSize.X
 	Errors.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	Errors.BackgroundTransparency = 1.000
 	Errors.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -303,6 +304,7 @@ local function NewGui()
 
 	Warnings.Name = "Warnings"
 	Warnings.Parent = Outputs
+	Warnings.AutomaticSize = Enum.AutomaticSize.X
 	Warnings.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	Warnings.BackgroundTransparency = 1.000
 	Warnings.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -337,6 +339,7 @@ local function NewGui()
 
 	Informations.Name = "Informations"
 	Informations.Parent = Outputs
+	Informations.AutomaticSize = Enum.AutomaticSize.X
 	Informations.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	Informations.BackgroundTransparency = 1.000
 	Informations.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -351,6 +354,7 @@ local function NewGui()
 
 	Outputs_2.Name = "Outputs"
 	Outputs_2.Parent = Outputs
+	Outputs_2.AutomaticSize = Enum.AutomaticSize.X
 	Outputs_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	Outputs_2.BackgroundTransparency = 1.000
 	Outputs_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -385,6 +389,7 @@ local function NewGui()
 
 	Inputs.Name = "Inputs"
 	Inputs.Parent = Outputs
+	Inputs.AutomaticSize = Enum.AutomaticSize.X
 	Inputs.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	Inputs.BackgroundTransparency = 1.000
 	Inputs.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -406,6 +411,7 @@ local function NewGui()
 
 	Time.Name = "Time"
 	Time.Parent = TopFrame_2
+	Time.AutomaticSize = Enum.AutomaticSize.X
 	Time.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	Time.BackgroundTransparency = 1.000
 	Time.BorderColor3 = Color3.fromRGB(0, 0, 0)
