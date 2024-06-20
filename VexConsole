@@ -193,6 +193,7 @@ local function NewGui()
 	MainFrame.LayoutOrder = 2
 	MainFrame.Position = UDim2.new(0, 64, 0, 223)
 	MainFrame.Size = UDim2.new(0, 400, 0, 230)
+	MainFrame.Visible = false
 
 	TopFrame.Name = "TopFrame"
 	TopFrame.Parent = MainFrame
