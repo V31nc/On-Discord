@@ -130,7 +130,7 @@ local function NewGui()
 			end,
 		},
 	}
-	
+
 	local VexDeveloperConsole = Instance.new("ScreenGui")
 	local MainFrame = Instance.new("Frame")
 	local TopFrame = Instance.new("Frame")
@@ -161,6 +161,7 @@ local function NewGui()
 	local ScrollingFrame = Instance.new("ScrollingFrame")
 	local UIListLayout_7 = Instance.new("UIListLayout")
 	local Template = Instance.new("Frame")
+	local Type = Instance.new("StringValue")
 	local Image = Instance.new("ImageLabel")
 	local UIListLayout_8 = Instance.new("UIListLayout")
 	local Message = Instance.new("TextLabel")
@@ -452,8 +453,10 @@ local function NewGui()
 	ScrollingFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	ScrollingFrame.BorderSizePixel = 0
 	ScrollingFrame.Size = UDim2.new(1, 0, 1, 0)
+	ScrollingFrame.AutomaticCanvasSize = Enum.AutomaticSize.Y
 	ScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
 	ScrollingFrame.ScrollBarThickness = 2
+	ScrollingFrame.ScrollingDirection = Enum.ScrollingDirection.Y
 
 	UIListLayout_7.Parent = ScrollingFrame
 	UIListLayout_7.HorizontalAlignment = Enum.HorizontalAlignment.Center
@@ -462,6 +465,7 @@ local function NewGui()
 
 	Template.Name = "Template"
 	Template.Parent = ScrollingFrame
+	Template.AutomaticSize = Enum.AutomaticSize.Y
 	Template.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	Template.BackgroundTransparency = 1.000
 	Template.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -470,6 +474,10 @@ local function NewGui()
 	Template.Position = UDim2.new(0.0250000674, 0, 0, 0)
 	Template.Size = UDim2.new(0.949999988, 0, 0, 0)
 	Template.Visible = false
+
+	Type.Name = "Type"
+	Type.Parent = Template
+	Type.Value = ""
 
 	Image.Name = "Image"
 	Image.Parent = Template
@@ -488,6 +496,7 @@ local function NewGui()
 
 	Message.Name = "Message"
 	Message.Parent = Template
+	Message.AutomaticSize = Enum.AutomaticSize.Y
 	Message.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	Message.BackgroundTransparency = 1.000
 	Message.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -643,7 +652,7 @@ local function NewGui()
 			Message:Error("Invalid command")
 		end
 	end)
-	
+
 	game:GetService("Players").LocalPlayer.Chatted:Connect(function(ChatString)
 		if ChatString == "/vexconsole" then
 			MainFrame.Visible = true
