@@ -720,11 +720,11 @@ local function NewGui()
 
 		Message:Input(CommandLineTextBox.Text)
 
-		local StringTable = string.split(CommandLineTextBox.Text, " ")
-		local StringTable_2 = string.split(i, " ")
 		local Runned = false
 
 		for i, v in Commands do
+			local StringTable = string.split(CommandLineTextBox.Text, " ")
+			local StringTable_2 = string.split(i, " ")
 			if string.find(string.lower(StringTable_2[1]), string.lower(StringTable[1])) and Runned == false then
 				Runned = true
 				v.Function(CommandLineTextBox.Text)
