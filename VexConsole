@@ -129,6 +129,72 @@ local function NewGui()
 				Message:Information(NewString)
 			end,
 		},
+
+
+		["search <Message>"] = {
+			Description = "Searches the console containing the <Message>",
+			Function = function(Text)
+				local Message = loadstring(game:HttpGet("https://raw.githubusercontent.com/V31nc/On-Discord/Created/VexConsole"))()
+				local Commands = _G.Commands
+				local Outputs = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame
+				local StringTable = string.split(Text, " ")
+				local NewString = ""
+				local Results = false
+
+				local function SplitMessage(UnsplitedMessage)
+					local SearchingTable = ""
+					local SplittedTable = string.split(UnsplitedMessage, " ")
+
+					for i, v in SplittedTable do
+						if i ~= 1 then
+							if SearchingTable == "" then
+								SearchingTable = v
+							else
+								SearchingTable = SearchingTable.." "..v
+							end
+						end
+					end
+					wait()
+
+					return SearchingTable
+				end
+
+				Message:Output("Type \"closesearch()\" to close the search")
+
+				for i, v in Outputs:GetChildren() do
+					if v:FindFirstChild("Type") then
+						if string.find(SplitMessage(Text), v.Message.Value) then
+							v.Visible = true
+							Results = true
+						else
+							v.Visible = false
+						end
+					end
+				end
+				wait()
+
+				if Results == false then
+					Message:Error("No results found containing: "..StringTable[2])
+				end
+			end,
+		},
+		
+		["closesearch()"] = {
+			Description = "Basic print but blue",
+			Function = function(Text)
+				local Message = loadstring(game:HttpGet("https://raw.githubusercontent.com/V31nc/On-Discord/Created/VexConsole"))()
+				local Commands = _G.Commands
+				local Outputs = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame
+				local StringTable = string.split(Text, " ")
+				local NewString = ""
+
+				for i, v in Outputs:GetChildren() do
+					if v:FindFirstChild("Type") then
+						v.Visible = true
+					end
+				end
+			end,
+		},
 	}
 
 	local VexDeveloperConsole = Instance.new("ScreenGui")
@@ -161,6 +227,7 @@ local function NewGui()
 	local ScrollingFrame = Instance.new("ScrollingFrame")
 	local UIListLayout_7 = Instance.new("UIListLayout")
 	local Template = Instance.new("Frame")
+	local Message = Instance.new("StringValue")
 	local Type = Instance.new("StringValue")
 	local Image = Instance.new("ImageLabel")
 	local UIListLayout_8 = Instance.new("UIListLayout")
@@ -482,6 +549,10 @@ local function NewGui()
 	Template.Size = UDim2.new(0.949999988, 0, 0, 0)
 	Template.Visible = false
 
+	Message.Name = "Message"
+	Message.Parent = Template
+	Message.Value = ""
+
 	Type.Name = "Type"
 	Type.Parent = Template
 	Type.Value = ""
@@ -625,10 +696,6 @@ local function NewGui()
 		end
 	end
 
-	getgenv().vconsole = function()
-		ShowGui()
-	end
-
 	Close.MouseEnter:Connect(function()
 		Close.BackgroundTransparency = 0
 		Close.TextColor3 = Color3.new(255, 255, 255)
@@ -654,15 +721,16 @@ local function NewGui()
 		Message:Input(CommandLineTextBox.Text)
 
 		local StringTable = string.split(CommandLineTextBox.Text, " ")
+		local StringTable_2 = string.split(i, " ")
 		local Runned = false
 
 		for i, v in Commands do
-			if string.find(string.lower(i), string.lower(StringTable[1])) and Runned == false then
+			if string.find(string.lower(StringTable_2[1]), string.lower(StringTable[1])) and Runned == false then
 				Runned = true
 				v.Function(CommandLineTextBox.Text)
 
-				if i ~= StringTable[1] then
-					Message:Information("Autofill: "..i.." = "..StringTable[1].."?")
+				if StringTable_2[1] ~= StringTable[1] then
+					Message:Information("Autofill: "..StringTable_2[1].." = "..StringTable[1].."?")
 				end
 			end
 		end
@@ -780,6 +848,7 @@ function Table:Error(Message)
 
 		Template.Name = "Error"
 		Template.Parent = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame
+		Template.Message.Value = Message
 		Template.Type.Value = "Error"
 		Template.Image.Image = "http://www.roblox.com/asset/?id=18121298607"
 		Template.Message.TextColor3 = Color3.fromRGB(255, 102, 102)
@@ -794,6 +863,7 @@ function Table:Warning(Message)
 
 		Template.Name = "Warning"
 		Template.Parent = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame
+		Template.Message.Value = Message
 		Template.Type.Value = "Warning"
 		Template.Image.Image = "http://www.roblox.com/asset/?id=18121290881"
 		Template.Message.TextColor3 = Color3.fromRGB(255, 188, 87)
@@ -808,6 +878,7 @@ function Table:Information(Message)
 
 		Template.Name = "Information"
 		Template.Parent = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame
+		Template.Message.Value = Message
 		Template.Type.Value = "Information"
 		Template.Image.Image = "http://www.roblox.com/asset/?id=18121294506"
 		Template.Message.TextColor3 = Color3.fromRGB(76, 188, 255)
@@ -822,6 +893,7 @@ function Table:Output(Message)
 
 		Template.Name = "Output"
 		Template.Parent = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame
+		Template.Message.Value = Message
 		Template.Type.Value = "Output"
 		Template.Image.Image = "http://www.roblox.com/asset/?id=18121286381"
 		Template.Message.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -836,6 +908,7 @@ function Table:Input(Message)
 
 		Template.Name = "Input"
 		Template.Parent = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame
+		Template.Message.Value = Message
 		Template.Type.Value = "Input"
 		Template.Image.Image = "http://www.roblox.com/asset/?id=11704876885"
 		Template.Message.TextColor3 = Color3.fromRGB(255, 255, 255)
