@@ -179,6 +179,7 @@ local function NewGui()
 				end
 				wait()
 
+				Message:Output("------------------------------")
 				Message:Information("Type \"closesearch()\" to close the search")
 				Message:Output("Searched: \""..SplitMessage(Text).."\" matched "..NumbersOfResults.." messages.")
 
