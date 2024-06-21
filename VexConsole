@@ -159,11 +159,9 @@ local function NewGui()
 					return SearchingTable
 				end
 
-				Message:Output("Type \"closesearch()\" to close the search")
-
 				for i, v in Outputs:GetChildren() do
 					if v:FindFirstChild("Type") then
-						if string.find(string.lower(SplitMessage(Text)), string.lower(v.OutputMessage.Value)) and v.Name ~= "Template" then
+						if string.find(string.lower(v.OutputMessage.Value), string.lower(SplitMessage(Text))) and v.Name ~= "Template" then
 							v.Visible = true
 							Results = true
 						else
@@ -172,6 +170,8 @@ local function NewGui()
 					end
 				end
 				wait()
+
+				Message:Output("Type \"closesearch()\" to close the search")
 
 				if Results == false then
 					Message:Error("No results found containing: "..StringTable[2])
