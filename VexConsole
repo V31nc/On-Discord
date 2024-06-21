@@ -171,7 +171,7 @@ local function NewGui()
 				end
 				wait()
 
-				Message:Output("Type \"closesearch()\" to close the search")
+				Message:Information("Type \"closesearch()\" to close the search")
 
 				if Results == false then
 					Message:Error("No results found containing: "..StringTable[2])
