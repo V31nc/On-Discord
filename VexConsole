@@ -889,96 +889,116 @@ wait()
 
 function Table:Success(Message)
 	coroutine.wrap(function()
-		local Template = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame.Template:Clone()
+		local ScrollingFrame = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame
+		local Template = ScrollingFrame.Template:Clone()
+
+		ScrollingFrame.CanvasPosition = Vector2.new(0, 100000000000000000000000000000000000000)
 
 		Template.Name = "Success"
 		Template.Parent = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame
-		Template.OutputMessage.Value = Message
+		Template.OutputMessage.Value = tostring(Message)
 		Template.Type.Value = "Success"
 		Template.Image.Image = "http://www.roblox.com/asset/?id=18145374090"
 		Template.Message.TextColor3 = Color3.fromRGB(38, 217, 100)
-		Template.Message.Text = os.date("%H:%M:%S -- Success\n"..Message)
+		Template.Message.Text = os.date("%H:%M:%S -- Success\n"..tostring(Message))
 		Template.Visible = true
 	end)()
 end
 
 function Table:Error(Message)
 	coroutine.wrap(function()
-		local Template = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame.Template:Clone()
+		local ScrollingFrame = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame
+		local Template = ScrollingFrame.Template:Clone()
+
+		ScrollingFrame.CanvasPosition = Vector2.new(0, 100000000000000000000000000000000000000)
 
 		Template.Name = "Error"
 		Template.Parent = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame
-		Template.OutputMessage.Value = Message
+		Template.OutputMessage.Value = tostring(Message)
 		Template.Type.Value = "Error"
 		Template.Image.Image = "http://www.roblox.com/asset/?id=18121298607"
 		Template.Message.TextColor3 = Color3.fromRGB(255, 102, 102)
-		Template.Message.Text = os.date("%H:%M:%S -- Error\n"..Message)
+		Template.Message.Text = os.date("%H:%M:%S -- Error\n"..tostring(Message))
 		Template.Visible = true
 	end)()
 end
 
 function Table:Warning(Message)
 	coroutine.wrap(function()
-		local Template = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame.Template:Clone()
+		local ScrollingFrame = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame
+		local Template = ScrollingFrame.Template:Clone()
+
+		ScrollingFrame.CanvasPosition = Vector2.new(0, 100000000000000000000000000000000000000)
 
 		Template.Name = "Warning"
 		Template.Parent = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame
-		Template.OutputMessage.Value = Message
+		Template.OutputMessage.Value = tostring(Message)
 		Template.Type.Value = "Warning"
 		Template.Image.Image = "http://www.roblox.com/asset/?id=18121290881"
 		Template.Message.TextColor3 = Color3.fromRGB(255, 188, 87)
-		Template.Message.Text = os.date("%H:%M:%S -- Warning\n"..Message)
+		Template.Message.Text = os.date("%H:%M:%S -- Warning\n"..tostring(Message))
 		Template.Visible = true
 	end)()
 end
 
 function Table:Information(Message)
 	coroutine.wrap(function()
-		local Template = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame.Template:Clone()
+		local ScrollingFrame = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame
+		local Template = ScrollingFrame.Template:Clone()
+
+		ScrollingFrame.CanvasPosition = Vector2.new(0, 100000000000000000000000000000000000000)
 
 		Template.Name = "Information"
 		Template.Parent = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame
-		Template.OutputMessage.Value = Message
+		Template.OutputMessage.Value = tostring(Message)
 		Template.Type.Value = "Information"
 		Template.Image.Image = "http://www.roblox.com/asset/?id=18121294506"
 		Template.Message.TextColor3 = Color3.fromRGB(76, 188, 255)
-		Template.Message.Text = os.date("%H:%M:%S -- Information\n"..Message)
+		Template.Message.Text = os.date("%H:%M:%S -- Information\n"..tostring(Message))
 		Template.Visible = true
 	end)()
 end
 
 function Table:Output(Message)
 	coroutine.wrap(function()
-		local Template = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame.Template:Clone()
+		local ScrollingFrame = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame
+		local Template = ScrollingFrame.Template:Clone()
+
+		ScrollingFrame.CanvasPosition = Vector2.new(0, 100000000000000000000000000000000000000)
 
 		Template.Name = "Output"
 		Template.Parent = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame
-		Template.OutputMessage.Value = Message
+		Template.OutputMessage.Value = tostring(Message)
 		Template.Type.Value = "Output"
 		Template.Image.Image = "http://www.roblox.com/asset/?id=18121286381"
 		Template.Message.TextColor3 = Color3.fromRGB(255, 255, 255)
-		Template.Message.Text = os.date("%H:%M:%S -- Output\n"..Message)
+		Template.Message.Text = os.date("%H:%M:%S -- Output\n"..tostring(Message))
 		Template.Visible = true
 	end)()
 end
 
 function Table:Input(Message)
 	coroutine.wrap(function()
-		local Template = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame.Template:Clone()
+		local ScrollingFrame = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame
+		local Template = ScrollingFrame.Template:Clone()
+
+		ScrollingFrame.CanvasPosition = Vector2.new(0, 100000000000000000000000000000000000000)
 
 		Template.Name = "Input"
 		Template.Parent = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame
-		Template.OutputMessage.Value = Message
+		Template.OutputMessage.Value = tostring(Message)
 		Template.Type.Value = "Input"
 		Template.Image.Image = "http://www.roblox.com/asset/?id=11704876885"
 		Template.Message.TextColor3 = Color3.fromRGB(255, 255, 255)
-		Template.Message.Text = os.date("%H:%M:%S -- Input\n> "..Message)
+		Template.Message.Text = os.date("%H:%M:%S -- Input\n> "..tostring(Message))
 		Template.Visible = true
 	end)()
 end
 
 function Table:Visible(bool)
-	game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.Visible = bool
+	local VexDeveloperConsole = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole")
+	VexDeveloperConsole.MainFrame.Visible = bool
+	VexDeveloperConsole.MainFrame.Position = UDim2.new(0, VexDeveloperConsole.CenterPosition.Frame.AbsolutePosition.X, 0, VexDeveloperConsole.CenterPosition.Frame.AbsolutePosition.Y)
 end
 
 return Table
