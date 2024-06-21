@@ -160,18 +160,20 @@ local function NewGui()
 				end
 
 				for i, v in Outputs:GetChildren() do
-					if v:FindFirstChild("Type") then
-						if string.find(string.lower(v.OutputMessage.Value), string.lower(SplitMessage(Text))) and v.Name ~= "Template" then
-							if string.find(v.Message.Text, "/search") then
-								v.Visible = false
+					coroutine.wrap(function()
+						if v:FindFirstChild("Type") then
+							if string.find(string.lower(v.OutputMessage.Value), string.lower(SplitMessage(Text))) and v.Name ~= "Template" then
+								if string.find(v.Message.Text, "/search") then
+									v.Visible = false
+								else
+									v.Visible = true
+									Results = true
+								end
 							else
-								v.Visible = true
-								Results = true
+								v.Visible = false
 							end
-						else
-							v.Visible = false
 						end
-					end
+					end)()
 				end
 				wait()
 
