@@ -360,7 +360,7 @@ local function NewGui()
 	SuccessImage.BorderSizePixel = 0
 	SuccessImage.LayoutOrder = 1
 	SuccessImage.Size = UDim2.new(0, 20, 0, 20)
-	SuccessImage.Image = "http://www.roblox.com/asset/?id=18121298607"
+	SuccessImage.Image = "http://www.roblox.com/asset/?id=18145374090"
 
 	Successes.Name = "Successes"
 	Successes.Parent = Outputs
@@ -409,7 +409,7 @@ local function NewGui()
 	Warnings.BackgroundTransparency = 1.000
 	Warnings.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Warnings.BorderSizePixel = 0
-	Warnings.LayoutOrder = 5
+	Warnings.LayoutOrder = 6
 	Warnings.Size = UDim2.new(0, 0, 0, 18)
 	Warnings.FontFace = Font.fromId(12187607287, Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 	Warnings.Text = "0"
@@ -423,7 +423,7 @@ local function NewGui()
 	WarningImage.BackgroundTransparency = 1.000
 	WarningImage.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	WarningImage.BorderSizePixel = 0
-	WarningImage.LayoutOrder = 6
+	WarningImage.LayoutOrder = 5
 	WarningImage.Size = UDim2.new(0, 20, 0, 20)
 	WarningImage.Image = "http://www.roblox.com/asset/?id=18121290881"
 
@@ -459,7 +459,7 @@ local function NewGui()
 	Outputs_2.BackgroundTransparency = 1.000
 	Outputs_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Outputs_2.BorderSizePixel = 0
-	Outputs_2.LayoutOrder = 9
+	Outputs_2.LayoutOrder = 10
 	Outputs_2.Size = UDim2.new(0, 0, 0, 18)
 	Outputs_2.FontFace = Font.fromId(12187607287, Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 	Outputs_2.Text = "0"
@@ -473,7 +473,7 @@ local function NewGui()
 	OutputImage.BackgroundTransparency = 1.000
 	OutputImage.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	OutputImage.BorderSizePixel = 0
-	OutputImage.LayoutOrder = 10
+	OutputImage.LayoutOrder = 9
 	OutputImage.Size = UDim2.new(0, 20, 0, 20)
 	OutputImage.Image = "http://www.roblox.com/asset/?id=18121286381"
 
