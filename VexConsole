@@ -161,9 +161,13 @@ local function NewGui()
 
 				for i, v in Outputs:GetChildren() do
 					if v:FindFirstChild("Type") then
-						if string.find(string.lower(v.OutputMessage.Value), string.lower(SplitMessage(Text))) and v.Name ~= "Template" and string.find(v.Message.Text, "/search") ~= nil then
-							v.Visible = true
-							Results = true
+						if string.find(string.lower(v.OutputMessage.Value), string.lower(SplitMessage(Text))) and v.Name ~= "Template" then
+							if string.find(v.Message.Text, "/search") then
+								v.Visible = false
+							else
+								v.Visible = true
+								Results = true
+							end
 						else
 							v.Visible = false
 						end
