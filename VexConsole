@@ -214,6 +214,8 @@ local function NewGui()
 	local TopFrame_2 = Instance.new("Frame")
 	local Outputs = Instance.new("Frame")
 	local UIListLayout_3 = Instance.new("UIListLayout")
+	local SuccessImage = Instance.new("ImageLabel")
+	local Successes = Instance.new("TextLabel")
 	local ErrorImage = Instance.new("ImageLabel")
 	local Errors = Instance.new("TextLabel")
 	local Warnings = Instance.new("TextLabel")
@@ -341,7 +343,7 @@ local function NewGui()
 	Outputs.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Outputs.BorderSizePixel = 0
 	Outputs.Position = UDim2.new(0.236842111, 0, 0, 0)
-	Outputs.Size = UDim2.new(0, 170, 0, 20)
+	Outputs.Size = UDim2.new(0, 205, 0, 20)
 
 	UIListLayout_3.Parent = Outputs
 	UIListLayout_3.FillDirection = Enum.FillDirection.Horizontal
@@ -350,13 +352,38 @@ local function NewGui()
 	UIListLayout_3.VerticalAlignment = Enum.VerticalAlignment.Center
 	UIListLayout_3.Padding = UDim.new(0, 3)
 
+	SuccessImage.Name = "SuccessImage"
+	SuccessImage.Parent = Outputs
+	SuccessImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	SuccessImage.BackgroundTransparency = 1.000
+	SuccessImage.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	SuccessImage.BorderSizePixel = 0
+	SuccessImage.LayoutOrder = 1
+	SuccessImage.Size = UDim2.new(0, 20, 0, 20)
+	SuccessImage.Image = "http://www.roblox.com/asset/?id=18121298607"
+
+	Successes.Name = "Successes"
+	Successes.Parent = Outputs
+	Successes.AutomaticSize = Enum.AutomaticSize.X
+	Successes.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Successes.BackgroundTransparency = 1.000
+	Successes.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Successes.BorderSizePixel = 0
+	Successes.LayoutOrder = 2
+	Successes.Size = UDim2.new(0, 0, 0, 18)
+	Successes.FontFace = Font.fromId(12187607287, Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+	Successes.Text = "0"
+	Successes.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Successes.TextSize = 16.000
+	Successes.TextWrapped = true
+
 	ErrorImage.Name = "ErrorImage"
 	ErrorImage.Parent = Outputs
 	ErrorImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	ErrorImage.BackgroundTransparency = 1.000
 	ErrorImage.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	ErrorImage.BorderSizePixel = 0
-	ErrorImage.LayoutOrder = 1
+	ErrorImage.LayoutOrder = 3
 	ErrorImage.Size = UDim2.new(0, 20, 0, 20)
 	ErrorImage.Image = "http://www.roblox.com/asset/?id=18121298607"
 
@@ -367,7 +394,7 @@ local function NewGui()
 	Errors.BackgroundTransparency = 1.000
 	Errors.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Errors.BorderSizePixel = 0
-	Errors.LayoutOrder = 2
+	Errors.LayoutOrder = 4
 	Errors.Size = UDim2.new(0, 0, 0, 18)
 	Errors.FontFace = Font.fromId(12187607287, Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 	Errors.Text = "0"
@@ -382,7 +409,7 @@ local function NewGui()
 	Warnings.BackgroundTransparency = 1.000
 	Warnings.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Warnings.BorderSizePixel = 0
-	Warnings.LayoutOrder = 4
+	Warnings.LayoutOrder = 5
 	Warnings.Size = UDim2.new(0, 0, 0, 18)
 	Warnings.FontFace = Font.fromId(12187607287, Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 	Warnings.Text = "0"
@@ -396,7 +423,7 @@ local function NewGui()
 	WarningImage.BackgroundTransparency = 1.000
 	WarningImage.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	WarningImage.BorderSizePixel = 0
-	WarningImage.LayoutOrder = 3
+	WarningImage.LayoutOrder = 6
 	WarningImage.Size = UDim2.new(0, 20, 0, 20)
 	WarningImage.Image = "http://www.roblox.com/asset/?id=18121290881"
 
@@ -406,7 +433,7 @@ local function NewGui()
 	InformationImage.BackgroundTransparency = 1.000
 	InformationImage.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	InformationImage.BorderSizePixel = 0
-	InformationImage.LayoutOrder = 5
+	InformationImage.LayoutOrder = 7
 	InformationImage.Size = UDim2.new(0, 20, 0, 20)
 	InformationImage.Image = "http://www.roblox.com/asset/?id=18121294506"
 
@@ -417,7 +444,7 @@ local function NewGui()
 	Informations.BackgroundTransparency = 1.000
 	Informations.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Informations.BorderSizePixel = 0
-	Informations.LayoutOrder = 6
+	Informations.LayoutOrder = 8
 	Informations.Size = UDim2.new(0, 0, 0, 18)
 	Informations.FontFace = Font.fromId(12187607287, Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 	Informations.Text = "0"
@@ -432,7 +459,7 @@ local function NewGui()
 	Outputs_2.BackgroundTransparency = 1.000
 	Outputs_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Outputs_2.BorderSizePixel = 0
-	Outputs_2.LayoutOrder = 8
+	Outputs_2.LayoutOrder = 9
 	Outputs_2.Size = UDim2.new(0, 0, 0, 18)
 	Outputs_2.FontFace = Font.fromId(12187607287, Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 	Outputs_2.Text = "0"
@@ -446,7 +473,7 @@ local function NewGui()
 	OutputImage.BackgroundTransparency = 1.000
 	OutputImage.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	OutputImage.BorderSizePixel = 0
-	OutputImage.LayoutOrder = 7
+	OutputImage.LayoutOrder = 10
 	OutputImage.Size = UDim2.new(0, 20, 0, 20)
 	OutputImage.Image = "http://www.roblox.com/asset/?id=18121286381"
 
@@ -456,7 +483,7 @@ local function NewGui()
 	InputImage.BackgroundTransparency = 1.000
 	InputImage.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	InputImage.BorderSizePixel = 0
-	InputImage.LayoutOrder = 9
+	InputImage.LayoutOrder = 11
 	InputImage.Size = UDim2.new(0, 20, 0, 20)
 	InputImage.Image = "rbxassetid://11704876885"
 
@@ -467,7 +494,7 @@ local function NewGui()
 	Inputs.BackgroundTransparency = 1.000
 	Inputs.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Inputs.BorderSizePixel = 0
-	Inputs.LayoutOrder = 10
+	Inputs.LayoutOrder = 12
 	Inputs.Size = UDim2.new(0, 0, 0, 18)
 	Inputs.FontFace = Font.fromId(12187607287, Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 	Inputs.Text = "0"
@@ -772,6 +799,7 @@ local function NewGui()
 	coroutine.wrap(function()
 		while task.wait() do
 			local OutputsTextLabel = Outputs
+			local SuccessMessages = 0
 			local ErrorMessages = 0
 			local WarningMessages = 0
 			local InformationMessages = 0
@@ -780,7 +808,9 @@ local function NewGui()
 
 			for i, v in ScrollingFrame:GetChildren() do
 				if v:FindFirstChild("Type") and v.Name ~= "Template" then
-					if v.Type.Value == "Error" then
+					if v.Type.Value == "Success" then
+						SuccessMessages += 1
+					elseif v.Type.Value == "Error" then
 						ErrorMessages += 1
 					elseif v.Type.Value == "Warning" then
 						WarningMessages += 1
@@ -795,6 +825,7 @@ local function NewGui()
 			end
 
 			wait()
+			Successes.Text = SuccessMessages
 			Errors.Text = ErrorMessages
 			Warnings.Text = WarningMessages
 			Informations.Text = InformationMessages
@@ -813,6 +844,11 @@ local function NewGui()
 	getgenv().vprint = function(string)
 		local Message = loadstring(game:HttpGet("https://raw.githubusercontent.com/V31nc/On-Discord/Created/VexConsole"))()
 		Message:Output(string)
+	end
+
+	getgenv().vsuccess = function(string)
+		local Message = loadstring(game:HttpGet("https://raw.githubusercontent.com/V31nc/On-Discord/Created/VexConsole"))()
+		Message:Success(string)
 	end
 
 	getgenv().verror = function(string)
@@ -847,6 +883,21 @@ if not game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole") then
 end
 
 wait()
+
+function Table:Success(Message)
+	coroutine.wrap(function()
+		local Template = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame.Template:Clone()
+
+		Template.Name = "Success"
+		Template.Parent = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame
+		Template.OutputMessage.Value = Message
+		Template.Type.Value = "Success"
+		Template.Image.Image = "http://www.roblox.com/asset/?id=18145374090"
+		Template.Message.TextColor3 = Color3.fromRGB(38, 217, 100)
+		Template.Message.Text = os.date("%H:%M:%S -- Success\n"..Message)
+		Template.Visible = true
+	end)()
+end
 
 function Table:Error(Message)
 	coroutine.wrap(function()
