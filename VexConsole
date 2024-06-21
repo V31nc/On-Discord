@@ -163,7 +163,7 @@ local function NewGui()
 
 				for i, v in Outputs:GetChildren() do
 					if v:FindFirstChild("Type") then
-						if string.find(string.lower(SplitMessage(Text)), string.lower(v.Message.Value)) and v.Name ~= "Template" then
+						if string.find(string.lower(SplitMessage(Text)), string.lower(v.OutputMessage.Value)) and v.Name ~= "Template" then
 							v.Visible = true
 							Results = true
 						else
@@ -189,7 +189,7 @@ local function NewGui()
 				local NewString = ""
 
 				for i, v in Outputs:GetChildren() do
-					if v:FindFirstChild("Type") then
+					if v:FindFirstChild("Type") and v.Name ~= "Template" then
 						v.Visible = true
 					end
 				end
