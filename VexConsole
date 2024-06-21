@@ -140,6 +140,7 @@ local function NewGui()
 				local StringTable = string.split(Text, " ")
 				local NewString = ""
 				local Results = false
+				local NumbersOfResults = 0
 
 				local function SplitMessage(UnsplitedMessage)
 					local SearchingTable = ""
@@ -163,11 +164,12 @@ local function NewGui()
 					coroutine.wrap(function()
 						if v:FindFirstChild("Type") then
 							if string.find(string.lower(v.OutputMessage.Value), string.lower(SplitMessage(Text))) and v.Name ~= "Template" then
-								if string.find(v.Message.Text, "/search") then
+								if string.find(v.Message.Text, "/search") or string.find(v.Message.Text, "Type \"closesearch()\" to close the search") or string.find(v.Message.Text, "No results found containing: ") then
 									v.Visible = false
 								else
 									v.Visible = true
 									Results = true
+									NumbersOfResults += 1
 								end
 							else
 								v.Visible = false
@@ -178,9 +180,10 @@ local function NewGui()
 				wait()
 
 				Message:Information("Type \"closesearch()\" to close the search")
+				Message:Output("Searched: \""..SplitMessage(Text).."\" matched "..NumbersOfResults.." messages.")
 
 				if Results == false then
-					Message:Error("No results found containing: "..StringTable[2])
+					Message:Error("No results found matching: \""..SplitMessage(Text).."\"")
 				end
 			end,
 		},
