@@ -612,6 +612,23 @@ local function NewGui()
 
 	MainFrame.Position = UDim2.new(0, Frame.AbsolutePosition.X, 0, Frame.AbsolutePosition.Y)
 
+	local function ShowGui()
+		MainFrame.Visible = true
+		MainFrame.Position = UDim2.new(0, Frame.AbsolutePosition.X, 0, Frame.AbsolutePosition.Y)
+	end
+
+	local function DestroyMessages()
+		for i, v in ScrollingFrame:GetChildren() do
+			if v:FindFirstChild("Type") and v.Name ~= "Template" then
+				v:Destroy()
+			end
+		end
+	end
+
+	getgenv().vconsole = function()
+		ShowGui()
+	end
+
 	Close.MouseEnter:Connect(function()
 		Close.BackgroundTransparency = 0
 		Close.TextColor3 = Color3.new(255, 255, 255)
@@ -627,11 +644,7 @@ local function NewGui()
 	end)
 
 	ClearButton.MouseButton1Down:Connect(function()
-		for i, v in ScrollingFrame:GetChildren() do
-			if v:FindFirstChild("Type") and v.Name ~= "Template" then
-				v:Destroy()
-			end
-		end
+		DestroyMessages()
 	end)
 
 	RunButton.MouseButton1Down:Connect(function()
@@ -662,8 +675,7 @@ local function NewGui()
 
 	game:GetService("Players").LocalPlayer.Chatted:Connect(function(ChatString)
 		if ChatString == "/vexconsole" then
-			MainFrame.Visible = true
-			MainFrame.Position = UDim2.new(0, Frame.AbsolutePosition.X, 0, Frame.AbsolutePosition.Y)
+			ShowGui()
 		end
 	end)
 
@@ -722,13 +734,42 @@ local function NewGui()
 			Time.Text = os.date("%H:%M:%S")
 		end
 	end)()
+
+	-- API:
+	getgenv().vprint = function(string)
+		local Message = loadstring(game:HttpGet("https://raw.githubusercontent.com/V31nc/On-Discord/Created/VexConsole"))()
+		Message:Output(string)
+	end
+
+	getgenv().verror = function(string)
+		local Message = loadstring(game:HttpGet("https://raw.githubusercontent.com/V31nc/On-Discord/Created/VexConsole"))()
+		Message:Error(string)
+	end
+
+	getgenv().vwarn = function(string)
+		local Message = loadstring(game:HttpGet("https://raw.githubusercontent.com/V31nc/On-Discord/Created/VexConsole"))()
+		Message:Warning(string)
+	end
+
+	getgenv().vinfo = function(string)
+		local Message = loadstring(game:HttpGet("https://raw.githubusercontent.com/V31nc/On-Discord/Created/VexConsole"))()
+		Message:Information(string)
+	end
+
+	getgenv().vclear = function()
+		DestroyMessages()
+	end
+
+	getgenv().vconsole = function()
+		ShowGui()
+	end
 end
 
 if not game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole") then
 	NewGui()
 	wait()
-	Message = loadstring(game:HttpGet("https://raw.githubusercontent.com/V31nc/On-Discord/Created/VexConsole"))()
-	Message:Output("Type \"cmds()\" in the command line to view VexConsole commands!\n\nType \"/vexconsole\" in the chat or press the \"F8\" key in your keyboard to prompt the console!")
+	local Message = loadstring(game:HttpGet("https://raw.githubusercontent.com/V31nc/On-Discord/Created/VexConsole"))()
+	Message:Output("Type \"cmds()\" in the command line to view VexConsole commands!\n\nType \"/vexconsole\" in the chat or press the \"F8\" key in your keyboard or execute \"vconsole()\" in your executor to prompt the console!")
 end
 
 wait()
