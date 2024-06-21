@@ -163,7 +163,7 @@ local function NewGui()
 
 				for i, v in Outputs:GetChildren() do
 					if v:FindFirstChild("Type") then
-						if string.find(SplitMessage(Text), v.Message.Value) then
+						if string.find(string.lower(SplitMessage(Text)), string.lower(v.Message.Value)) then
 							v.Visible = true
 							Results = true
 						else
