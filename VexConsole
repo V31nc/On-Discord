@@ -163,7 +163,7 @@ local function NewGui()
 
 				for i, v in Outputs:GetChildren() do
 					if v:FindFirstChild("Type") then
-						if string.find(string.lower(SplitMessage(Text)), string.lower(v.Message.Value)) then
+						if string.find(string.lower(SplitMessage(Text)), string.lower(v.OutputMessage.Value)) then
 							v.Visible = true
 							Results = true
 						else
@@ -227,7 +227,7 @@ local function NewGui()
 	local ScrollingFrame = Instance.new("ScrollingFrame")
 	local UIListLayout_7 = Instance.new("UIListLayout")
 	local Template = Instance.new("Frame")
-	local Message_2 = Instance.new("StringValue")
+	local OutputMessage = Instance.new("StringValue")
 	local Type = Instance.new("StringValue")
 	local Image = Instance.new("ImageLabel")
 	local UIListLayout_8 = Instance.new("UIListLayout")
@@ -549,9 +549,9 @@ local function NewGui()
 	Template.Size = UDim2.new(0.949999988, 0, 0, 0)
 	Template.Visible = false
 
-	Message_2.Name = "Message"
-	Message_2.Parent = Template
-	Message_2.Value = ""
+	OutputMessage.Name = "OutputMessage"
+	OutputMessage.Parent = Template
+	OutputMessage.Value = ""
 
 	Type.Name = "Type"
 	Type.Parent = Template
@@ -848,7 +848,7 @@ function Table:Error(Message)
 
 		Template.Name = "Error"
 		Template.Parent = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame
-		Template.Message.Value = Message
+		Template.OutputMessage.Value = Message
 		Template.Type.Value = "Error"
 		Template.Image.Image = "http://www.roblox.com/asset/?id=18121298607"
 		Template.Message.TextColor3 = Color3.fromRGB(255, 102, 102)
@@ -863,7 +863,7 @@ function Table:Warning(Message)
 
 		Template.Name = "Warning"
 		Template.Parent = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame
-		Template.Message.Value = Message
+		Template.OutputMessage.Value = Message
 		Template.Type.Value = "Warning"
 		Template.Image.Image = "http://www.roblox.com/asset/?id=18121290881"
 		Template.Message.TextColor3 = Color3.fromRGB(255, 188, 87)
@@ -878,7 +878,7 @@ function Table:Information(Message)
 
 		Template.Name = "Information"
 		Template.Parent = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame
-		Template.Message.Value = Message
+		Template.OutputMessage.Value = Message
 		Template.Type.Value = "Information"
 		Template.Image.Image = "http://www.roblox.com/asset/?id=18121294506"
 		Template.Message.TextColor3 = Color3.fromRGB(76, 188, 255)
@@ -893,7 +893,7 @@ function Table:Output(Message)
 
 		Template.Name = "Output"
 		Template.Parent = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame
-		Template.Message.Value = Message
+		Template.OutputMessage.Value = Message
 		Template.Type.Value = "Output"
 		Template.Image.Image = "http://www.roblox.com/asset/?id=18121286381"
 		Template.Message.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -908,7 +908,8 @@ function Table:Input(Message)
 
 		Template.Name = "Input"
 		Template.Parent = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame
-		Template.Message.Value = Message
+		Template.OutputMessage
+		Template.OutputMessage.Value = Message
 		Template.Type.Value = "Input"
 		Template.Image.Image = "http://www.roblox.com/asset/?id=11704876885"
 		Template.Message.TextColor3 = Color3.fromRGB(255, 255, 255)
