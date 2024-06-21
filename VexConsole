@@ -131,7 +131,7 @@ local function NewGui()
 		},
 
 
-		["search <Message>"] = {
+		["/search <Message>"] = {
 			Description = "Searches the console containing the <Message>",
 			Function = function(Text)
 				local Message = loadstring(game:HttpGet("https://raw.githubusercontent.com/V31nc/On-Discord/Created/VexConsole"))()
@@ -163,7 +163,7 @@ local function NewGui()
 
 				for i, v in Outputs:GetChildren() do
 					if v:FindFirstChild("Type") then
-						if string.find(string.lower(SplitMessage(Text)), string.lower(v.Message.Value)) then
+						if string.find(string.lower(SplitMessage(Text)), string.lower(v.Message.Value)) and v.Name ~= "Template" then
 							v.Visible = true
 							Results = true
 						else
@@ -180,7 +180,7 @@ local function NewGui()
 		},
 		
 		["closesearch()"] = {
-			Description = "Basic print but blue",
+			Description = "Closes the searching seasion",
 			Function = function(Text)
 				local Message = loadstring(game:HttpGet("https://raw.githubusercontent.com/V31nc/On-Discord/Created/VexConsole"))()
 				local Commands = _G.Commands
