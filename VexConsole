@@ -227,7 +227,7 @@ local function NewGui()
 	local ScrollingFrame = Instance.new("ScrollingFrame")
 	local UIListLayout_7 = Instance.new("UIListLayout")
 	local Template = Instance.new("Frame")
-	local Message = Instance.new("StringValue")
+	local Message_2 = Instance.new("StringValue")
 	local Type = Instance.new("StringValue")
 	local Image = Instance.new("ImageLabel")
 	local UIListLayout_8 = Instance.new("UIListLayout")
@@ -549,9 +549,9 @@ local function NewGui()
 	Template.Size = UDim2.new(0.949999988, 0, 0, 0)
 	Template.Visible = false
 
-	Message.Name = "Message"
-	Message.Parent = Template
-	Message.Value = ""
+	Message_2.Name = "Message"
+	Message_2.Parent = Template
+	Message_2.Value = ""
 
 	Type.Name = "Type"
 	Type.Parent = Template
