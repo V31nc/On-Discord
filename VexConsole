@@ -899,7 +899,7 @@ function Table:Success(Message)
 		Template.Type.Value = "Success"
 		Template.Image.Image = "http://www.roblox.com/asset/?id=18145374090"
 		Template.Message.TextColor3 = Color3.fromRGB(38, 217, 100)
-		Template.Message.Text = os.date("%H:%M:%S -- Success\n"..tostring(Message))
+		Template.Message.Text = os.date("[%H:%M:%S] : Success -- "..tostring(Message))
 		Template.Visible = true
 
 		ScrollingFrame.CanvasPosition = Vector2.new(0, 100000000000000000000000000000000000000)
@@ -917,7 +917,7 @@ function Table:Error(Message)
 		Template.Type.Value = "Error"
 		Template.Image.Image = "http://www.roblox.com/asset/?id=18121298607"
 		Template.Message.TextColor3 = Color3.fromRGB(255, 102, 102)
-		Template.Message.Text = os.date("%H:%M:%S -- Error\n"..tostring(Message))
+		Template.Message.Text = os.date("[%H:%M:%S] : Error -- "..tostring(Message))
 		Template.Visible = true
 
 		ScrollingFrame.CanvasPosition = Vector2.new(0, 100000000000000000000000000000000000000)
@@ -935,7 +935,7 @@ function Table:Warning(Message)
 		Template.Type.Value = "Warning"
 		Template.Image.Image = "http://www.roblox.com/asset/?id=18121290881"
 		Template.Message.TextColor3 = Color3.fromRGB(255, 188, 87)
-		Template.Message.Text = os.date("%H:%M:%S -- Warning\n"..tostring(Message))
+		Template.Message.Text = os.date("[%H:%M:%S] : Warning -- "..tostring(Message))
 		Template.Visible = true
 
 		ScrollingFrame.CanvasPosition = Vector2.new(0, 100000000000000000000000000000000000000)
@@ -953,7 +953,7 @@ function Table:Information(Message)
 		Template.Type.Value = "Information"
 		Template.Image.Image = "http://www.roblox.com/asset/?id=18121294506"
 		Template.Message.TextColor3 = Color3.fromRGB(76, 188, 255)
-		Template.Message.Text = os.date("%H:%M:%S -- Information\n"..tostring(Message))
+		Template.Message.Text = os.date("[%H:%M:%S] : Information -- "..tostring(Message))
 		Template.Visible = true
 
 		ScrollingFrame.CanvasPosition = Vector2.new(0, 100000000000000000000000000000000000000)
@@ -971,7 +971,7 @@ function Table:Output(Message)
 		Template.Type.Value = "Output"
 		Template.Image.Image = "http://www.roblox.com/asset/?id=18121286381"
 		Template.Message.TextColor3 = Color3.fromRGB(255, 255, 255)
-		Template.Message.Text = os.date("%H:%M:%S -- Output\n"..tostring(Message))
+		Template.Message.Text = os.date("[%H:%M:%S] : Output -- "..tostring(Message))
 		Template.Visible = true
 
 		ScrollingFrame.CanvasPosition = Vector2.new(0, 100000000000000000000000000000000000000)
@@ -989,7 +989,7 @@ function Table:Input(Message)
 		Template.Type.Value = "Input"
 		Template.Image.Image = "http://www.roblox.com/asset/?id=11704876885"
 		Template.Message.TextColor3 = Color3.fromRGB(255, 255, 255)
-		Template.Message.Text = os.date("%H:%M:%S -- Input\n> "..tostring(Message))
+		Template.Message.Text = os.date("[%H:%M:%S] : Input -- > "..tostring(Message))
 		Template.Visible = true
 
 		ScrollingFrame.CanvasPosition = Vector2.new(0, 100000000000000000000000000000000000000)
