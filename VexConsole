@@ -259,7 +259,7 @@ local function NewGui()
 
 	VexDeveloperConsole.Name = "VexDeveloperConsole"
 	VexDeveloperConsole.Parent = game:GetService("CoreGui")
-	VexDeveloperConsole.LayoutOrder = 999999999
+	VexDeveloperConsole.DisplayOrder = 999999999
 	VexDeveloperConsole.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 	MainFrame.Name = "MainFrame"
