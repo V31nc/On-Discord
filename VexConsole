@@ -34,6 +34,22 @@ local function NewGui()
 			end,
 		},
 
+		["resetvexhubfolder()"] = {
+			Description = "Resets your VexHub folder.",
+			Function = function(Text)
+				local Message = loadstring(game:HttpGet("https://raw.githubusercontent.com/V31nc/On-Discord/Created/VexConsole"))()
+				local Commands = _G.Commands
+				local Outputs = game:GetService("CoreGui"):FindFirstChild("VexDeveloperConsole").MainFrame.BottomFrame.BottomFrame.ScrollingFrameParent.ScrollingFrame
+
+				if isfolder("VexHub") then
+					delfolder("VexHub")
+					Message:Success("VexHub folder has been reseted")
+				else
+					Message:Warning("VexHub folder was already reseted or doesnt exist")
+				end
+			end,
+		},
+
 		["print"] = {
 			Description = "Basic print",
 			Function = function(Text)
